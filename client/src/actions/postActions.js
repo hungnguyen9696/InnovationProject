@@ -1,6 +1,7 @@
 import axios from "axios";
 
 import {
+  LIKE_POST,
   ADD_POST,
   GET_ERRORS,
   CLEAR_ERRORS,
@@ -86,29 +87,65 @@ export const deletePost = id => dispatch => {
 };
 
 // Add Like
+// export const addLike = id => dispatch => {
+//   axios
+//     .post(`/api/posts/like/${id}`)
+//     .then(res => dispatch(getPosts()))
+//     .catch(err =>
+//       dispatch({
+//         type: GET_ERRORS,
+//         payload: err.response.data
+//       })
+//     );
+// };
+
+// Remove Like
+// export const removeLike = id => dispatch => {
+//   axios
+//     .post(`/api/posts/unlike/${id}`)
+//     .then(res => dispatch(getPosts()))
+//     .catch(err =>
+//       dispatch({
+//         type: GET_ERRORS,
+//         payload: err.response.data
+//       })
+//     );
+// };
+
+//Add Like
 export const addLike = id => dispatch => {
   axios
     .post(`/api/posts/like/${id}`)
-    .then(res => dispatch(getPosts()))
-    .catch(err =>
+    .then(({ data }) => {
+      dispatch({
+        type: LIKE_POST,
+        payload: data //pass in updated post
+      });
+    })
+    .catch(({ response }) => {
       dispatch({
         type: GET_ERRORS,
-        payload: err.response.data
-      })
-    );
+        payload: response.data
+      });
+    });
 };
 
-// Remove Like
+//Remove Like
 export const removeLike = id => dispatch => {
   axios
     .post(`/api/posts/unlike/${id}`)
-    .then(res => dispatch(getPosts()))
-    .catch(err =>
+    .then(({ data }) => {
+      dispatch({
+        type: LIKE_POST,
+        payload: data //pass in updated post
+      });
+    })
+    .catch(({ response }) => {
       dispatch({
         type: GET_ERRORS,
-        payload: err.response.data
-      })
-    );
+        payload: response.data
+      });
+    });
 };
 
 // Add Comment
