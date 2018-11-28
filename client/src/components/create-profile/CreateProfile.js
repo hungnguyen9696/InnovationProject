@@ -205,7 +205,7 @@ class CreateProfile extends Component {
                     <div className="invalid-feedback">{errors.skills}</div>
                   )}
                   <small className="form-text text-muted">
-                    Please use comma separated values (eg. a,b,c,d)
+                    Eg: math,science,physics,chemistry
                   </small>
                 </div>
 
