@@ -4,12 +4,12 @@ import { connect } from "react-redux";
 import PostForm from "./PostForm";
 import PostFeed from "./PostFeed";
 import Spinner from "../common/Spinner";
-import { getPosts } from "../../actions/postActions";
+import { getPostsHealth } from "../../actions/postActions";
 import { Link } from "react-router-dom";
 
-class Posts extends Component {
+class PostsHealth extends Component {
   componentDidMount() {
-    this.props.getPosts();
+    this.props.getPostsHealth();
   }
 
   render() {
@@ -47,6 +47,7 @@ class Posts extends Component {
                 <li className="list-group-item d-flex justify-content-between align-items-center">
                   <Link to="/feed/business">Business</Link>
                 </li>
+
                 <li className="list-group-item d-flex justify-content-between align-items-center">
                   <Link to="/feed/movies">Movies</Link>
                 </li>
@@ -65,8 +66,8 @@ class Posts extends Component {
   }
 }
 
-Posts.propTypes = {
-  getPosts: PropTypes.func.isRequired,
+PostsHealth.propTypes = {
+  getPostsHealth: PropTypes.func.isRequired,
   post: PropTypes.object.isRequired
 };
 
@@ -76,5 +77,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { getPosts }
-)(Posts);
+  { getPostsHealth }
+)(PostsHealth);

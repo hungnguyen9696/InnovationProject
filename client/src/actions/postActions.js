@@ -49,6 +49,139 @@ export const getPosts = () => dispatch => {
     );
 };
 
+//Get Posts with Science
+export const getPostsScience = () => dispatch => {
+  dispatch(setPostLoading());
+  axios
+    .get("/api/posts/topic/science")
+    .then(res =>
+      dispatch({
+        type: GET_POSTS,
+        payload: res.data
+      })
+    )
+    .catch(err =>
+      dispatch({
+        type: GET_POSTS,
+        payload: null
+      })
+    );
+};
+
+//Get Posts with Health
+export const getPostsHealth = () => dispatch => {
+  dispatch(setPostLoading());
+  axios
+    .get("/api/posts/topic/health")
+    .then(res =>
+      dispatch({
+        type: GET_POSTS,
+        payload: res.data
+      })
+    )
+    .catch(err =>
+      dispatch({
+        type: GET_POSTS,
+        payload: null
+      })
+    );
+};
+
+//Get Posts with Education
+export const getPostsEducation = () => dispatch => {
+  dispatch(setPostLoading());
+  axios
+    .get("/api/posts/topic/education")
+    .then(res =>
+      dispatch({
+        type: GET_POSTS,
+        payload: res.data
+      })
+    )
+    .catch(err =>
+      dispatch({
+        type: GET_POSTS,
+        payload: null
+      })
+    );
+};
+
+//Get Posts with Chemistry
+export const getPostsChemistry = () => dispatch => {
+  dispatch(setPostLoading());
+  axios
+    .get("/api/posts/topic/chemistry")
+    .then(res =>
+      dispatch({
+        type: GET_POSTS,
+        payload: res.data
+      })
+    )
+    .catch(err =>
+      dispatch({
+        type: GET_POSTS,
+        payload: null
+      })
+    );
+};
+
+//Get Posts with Travel
+export const getPostsTravel = () => dispatch => {
+  dispatch(setPostLoading());
+  axios
+    .get("/api/posts/topic/travel")
+    .then(res =>
+      dispatch({
+        type: GET_POSTS,
+        payload: res.data
+      })
+    )
+    .catch(err =>
+      dispatch({
+        type: GET_POSTS,
+        payload: null
+      })
+    );
+};
+
+//Get Posts with Business
+export const getPostsBusiness = () => dispatch => {
+  dispatch(setPostLoading());
+  axios
+    .get("/api/posts/topic/business")
+    .then(res =>
+      dispatch({
+        type: GET_POSTS,
+        payload: res.data
+      })
+    )
+    .catch(err =>
+      dispatch({
+        type: GET_POSTS,
+        payload: null
+      })
+    );
+};
+
+//Get Posts with Movies
+export const getPostsMovies = () => dispatch => {
+  dispatch(setPostLoading());
+  axios
+    .get("/api/posts/topic/movies")
+    .then(res =>
+      dispatch({
+        type: GET_POSTS,
+        payload: res.data
+      })
+    )
+    .catch(err =>
+      dispatch({
+        type: GET_POSTS,
+        payload: null
+      })
+    );
+};
+
 // Get Post
 export const getPost = id => dispatch => {
   dispatch(setPostLoading());

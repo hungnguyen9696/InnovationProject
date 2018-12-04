@@ -25,9 +25,13 @@ import Profile from "./components/profile/Profile";
 import NotFound from "./components/not-found/NotFound";
 import Posts from "./components/posts/Posts";
 import Post from "./components/post/Post";
-
-import Health from "./components/topic/Health";
-import Science from "./components/topic/Science";
+import PostsScience from "./components/posts/PostsScience";
+import PostsHealth from "./components/posts/PostsHealth";
+import PostsEducation from "./components/posts/PostsEducation";
+import PostsChemistry from "./components/posts/PostsChemistry";
+import PostsTravel from "./components/posts/PostsTravel";
+import PostsBusiness from "./components/posts/PostsBusiness";
+import PostsMovies from "./components/posts/PostsMovies";
 
 import "./App.css";
 
@@ -107,10 +111,53 @@ class App extends Component {
                 <PrivateRoute exact path="/post/:id" component={Post} />
               </Switch>
               <Switch>
-                <PrivateRoute exact path="/science" component={Science} />
+                <PrivateRoute
+                  exact
+                  path="/feed/science"
+                  component={PostsScience}
+                />
               </Switch>
               <Switch>
-                <PrivateRoute exact path="/health" component={Health} />
+                <PrivateRoute
+                  exact
+                  path="/feed/health"
+                  component={PostsHealth}
+                />
+              </Switch>
+              <Switch>
+                <PrivateRoute
+                  exact
+                  path="/feed/education"
+                  component={PostsEducation}
+                />
+              </Switch>
+              <Switch>
+                <PrivateRoute
+                  exact
+                  path="/feed/chemistry"
+                  component={PostsChemistry}
+                />
+              </Switch>
+              <Switch>
+                <PrivateRoute
+                  exact
+                  path="/feed/travel"
+                  component={PostsTravel}
+                />
+              </Switch>
+              <Switch>
+                <PrivateRoute
+                  exact
+                  path="/feed/business"
+                  component={PostsBusiness}
+                />
+              </Switch>
+              <Switch>
+                <PrivateRoute
+                  exact
+                  path="/feed/movies"
+                  component={PostsMovies}
+                />
               </Switch>
             </div>
             <Footer />

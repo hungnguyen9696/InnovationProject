@@ -39,3 +39,14 @@ img {
 .form-control::placeholder {
   color: #bbb !important;
 }
+
+.card {
+  border: 5;
+  background-color: transparent;
+  border-color: black;
+}
+
+/* .list-group {
+  background-color: transparent;
+  border-color: black;
+} */

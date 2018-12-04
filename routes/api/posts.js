@@ -37,6 +37,90 @@ router.get("/:id", (req, res) => {
     );
 });
 
+// @route   GET api/posts/topic/science
+// @desc    Get post with string Science
+// @access  Public
+router.get("/topic/science", (req, res) => {
+  Post.find({ text: { $regex: "science" } })
+    // Post.find({ text: "science" })
+    .then(post => res.json(post))
+    .catch(err =>
+      res.status(404).json({ nopostfound: "No post found with that string" })
+    );
+});
+
+// @route   GET api/posts/topic/health
+// @desc    Get post with string health
+// @access  Public
+router.get("/topic/health", (req, res) => {
+  Post.find({ text: { $regex: "health" } })
+
+    .then(post => res.json(post))
+    .catch(err =>
+      res.status(404).json({ nopostfound: "No post found with that string" })
+    );
+});
+
+// @route   GET api/posts/topic/education
+// @desc    Get post with string education
+// @access  Public
+router.get("/topic/education", (req, res) => {
+  Post.find({ text: { $regex: "education" } })
+
+    .then(post => res.json(post))
+    .catch(err =>
+      res.status(404).json({ nopostfound: "No post found with that string" })
+    );
+});
+
+// @route   GET api/posts/topic/chemistry
+// @desc    Get post with string chemistry
+// @access  Public
+router.get("/topic/chemistry", (req, res) => {
+  Post.find({ text: { $regex: "chemistry" } })
+
+    .then(post => res.json(post))
+    .catch(err =>
+      res.status(404).json({ nopostfound: "No post found with that string" })
+    );
+});
+
+// @route   GET api/posts/topic/travel
+// @desc    Get post with string travel
+// @access  Public
+router.get("/topic/travel", (req, res) => {
+  Post.find({ text: { $regex: "travel" } })
+
+    .then(post => res.json(post))
+    .catch(err =>
+      res.status(404).json({ nopostfound: "No post found with that string" })
+    );
+});
+
+// @route   GET api/posts/topic/business
+// @desc    Get post with string business
+// @access  Public
+router.get("/topic/business", (req, res) => {
+  Post.find({ text: { $regex: "business" } })
+
+    .then(post => res.json(post))
+    .catch(err =>
+      res.status(404).json({ nopostfound: "No post found with that string" })
+    );
+});
+
+// @route   GET api/posts/topic/movies
+// @desc    Get post with string movies
+// @access  Public
+router.get("/topic/movies", (req, res) => {
+  Post.find({ text: { $regex: "movie" } })
+
+    .then(post => res.json(post))
+    .catch(err =>
+      res.status(404).json({ nopostfound: "No post found with that string" })
+    );
+});
+
 // @route   POST api/posts
 // @desc    Create post
 // @access  Private
