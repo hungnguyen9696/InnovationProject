@@ -49,6 +49,25 @@ export const getPosts = () => dispatch => {
     );
 };
 
+//Get Posts By Input
+export const getPostsByInput = Data => dispatch => {
+  dispatch(setPostLoading());
+  axios
+    .get(`/api/posts/topic/${Data}`)
+    .then(res =>
+      dispatch({
+        type: GET_POSTS,
+        payload: res.data
+      })
+    )
+    .catch(err =>
+      dispatch({
+        type: GET_POSTS,
+        payload: null
+      })
+    );
+};
+
 //Get Posts with Science
 export const getPostsScience = () => dispatch => {
   dispatch(setPostLoading());

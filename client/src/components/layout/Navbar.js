@@ -2,21 +2,63 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
+
 import { logoutUser } from "../../actions/authActions";
 import { clearCurrentProfile } from "../../actions/profileActions";
+import { getPostsByInput } from "../../actions/postActions";
 
 class Navbar extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      searchforsmt: ""
+    };
+
+    this.onChange = this.onChange.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
+  }
+
   onLogoutClick(e) {
     e.preventDefault();
     this.props.clearCurrentProfile();
     this.props.logoutUser();
   }
 
+  onSubmit(e) {
+    e.preventDefault();
+
+    const Data = {
+      searchforsmt: this.state.searchforsmt
+    };
+
+    this.props.getPostsByInput(Data);
+  }
+
+  onChange(e) {
+    this.setState({ [e.target.name]: e.target.value });
+  }
+
   render() {
     const { isAuthenticated, user } = this.props.auth;
 
     const authLinks = (
-      <ul className="navbar-nav ml-auto">
+      <ul className="navbar-nav ml-auto" onSubmit={this.onSubmit}>
+        <form className="form-inline my-2 my-lg-0">
+          <input
+            type="text"
+            className="form-control mr-sm-2"
+            placeholder="Search"
+            name="searchforsmt"
+            value={this.state.searchforsmt}
+            onChange={this.onChange}
+          />
+          <input
+            className="btn btn-secondary my-2 my-sm-0"
+            type="submit"
+            value="Search"
+          />
+        </form>
+
         <li className="nav-item">
           <Link className="nav-link" to="/dashboard">
             <img
@@ -114,5 +156,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { logoutUser, clearCurrentProfile }
+  { logoutUser, clearCurrentProfile, getPostsByInput }
 )(Navbar);

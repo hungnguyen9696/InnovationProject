@@ -37,6 +37,14 @@ router.get("/:id", (req, res) => {
     );
 });
 
+// @route   GET api/posts/topic/:searchString
+// @desc    Get post by String input
+router.get("/topic/:searchString", (req, res) => {
+  Post.find({ text: { $regex: req.params.searchString } })
+    .then(post => res.json(post))
+    .catch(err => res.status(404).json({ nopostfound: "No post found " }));
+});
+
 // @route   GET api/posts/topic/science
 // @desc    Get post with string Science
 // @access  Public
