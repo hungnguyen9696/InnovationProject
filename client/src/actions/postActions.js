@@ -53,7 +53,7 @@ export const getPosts = () => dispatch => {
 export const getPostsByInput = Data => dispatch => {
   dispatch(setPostLoading());
   axios
-    .get(`/api/posts/topic/${Data}`)
+    .get(`/api/posts/topic/${Data.searchforsmt}`)
     .then(res =>
       dispatch({
         type: GET_POSTS,
