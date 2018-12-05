@@ -52,6 +52,9 @@ class PostsEducation extends Component {
                   <Link to="/feed/movies">Movies</Link>
                 </li>
               </ul>
+              <p>
+                <Link to="/youtube">Looking for some videos?</Link>
+              </p>
             </div>
 
             <div className="col-md-9 col-sm-9">
