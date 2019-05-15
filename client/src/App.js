@@ -33,8 +33,6 @@ import PostsTravel from "./components/posts/PostsTravel";
 import PostsBusiness from "./components/posts/PostsBusiness";
 import PostsMovies from "./components/posts/PostsMovies";
 
-import Youtube from "./components/youtube/Youtube";
-
 import "./App.css";
 
 // Check for token
@@ -71,7 +69,6 @@ class App extends Component {
               <Route exact path="/login" component={Login} />
               <Route exact path="/profiles" component={Profiles} />
               <Route exact path="/profile/:handle" component={Profile} />
-              <Route exact path="/youtube" component={Youtube} />
 
               <Switch>
                 <PrivateRoute exact path="/dashboard" component={Dashboard} />
