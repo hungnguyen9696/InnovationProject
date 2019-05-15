@@ -6,7 +6,7 @@ import SearchBar from "./search_bar";
 import VideoList from "./video_list";
 import VideoDetail from "./video_detail";
 
-const API_KEY = "AIzaSyAaVCj5J5p2TASq1AxkpLsYe4gltSMtros";
+const API_KEY = "AIzaSyBw2rw_0W2_91tD8bM8l0kVApTUhWsVPfE";
 
 export default class Youtube extends Component {
   constructor(props) {
